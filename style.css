@@ -2,6 +2,7 @@
 * {
   box-sizing: border-box;
 }
+
 body {
   --primary: #fff;
   --secondary: #050840;
@@ -98,7 +99,7 @@ a[href="#design"] {
 }
 
 @keyframes scaleUp {
-0% {
+  0% {
     transform: scale(1);
   }
   50% {
@@ -109,7 +110,7 @@ a[href="#design"] {
   }
 }
 
-/* wiggly wobbly oeehhhhhh & */
+/* wiggly wobbly oeehhhhhh (&) */
 .translateLR{
   animation-name: translateLR;
   animation-duration: 0.6s;
@@ -129,5 +130,34 @@ a[href="#design"] {
   }
   100% {
     transform: translateX(0);
+  } 
+}
+
+/* Shakedown animatie voor Development */
+.shakedown {
+  animation-name: shakedown;
+  animation-duration: 0.9s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+}
+
+@keyframes shakedown {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  20% {
+    transform: rotate(-10deg) scale(1.05);
+  }
+  40% {
+    transform: rotate(10deg) scale(1.05);
+  }
+  60% {
+    transform: rotate(-6deg) scale(1.1);
+  }
+  80% {
+    transform: rotate(6deg) scale(1.05);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
   }
 }

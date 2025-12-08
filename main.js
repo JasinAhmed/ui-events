@@ -1,60 +1,76 @@
 /* De eerste interactie is al voor jullie uitgewerkt
    Als je op het 2e linkje klikt (Design), springt deze omhoog */
 
-// Stap 1: selecteer het Design linkje, en sla deze op in een variabele
+// Stap 1: selecteer het Design linkje
 let designLink = document.querySelector('a[href="#design"]')
 
-// Stap 2: voeg de (click) event listener toe aan de link, met een callback functie
-// In dit geval wordt de jumpHandler functie aangeroepen, zodra je op het linkje klikt
+// Stap 2: voeg de click-event toe
 designLink.addEventListener('click', jumpHandler)
 
-// Deze jumpHandler functie staat klaar voor als we 'm aanroepen; deze wordt dus
-// _niet_ meteen bij het laden van de pagina aangeroepen
+// Callback functie
 function jumpHandler() {
-  // Stap 3: toggle een class op het element (zodra er dus op een link wordt geklikt)
   designLink.classList.toggle('jump')
 }
 
-// Extraatje, waardoor de class weer weggehaald wordt zodra de animatie afgelopen is
-// Dit is trouwens geen UIEvent, maar een AnimationEvent
+// Extra: class verwijderen na animatie zodat hij opnieuw werkt
 designLink.addEventListener('animationend', jumpHandler)
 
 
 
+/* FRONTEND - Scale animatie */
 
-
-// Ga zelf verder met de overige elementen, aan de hand van de instructies
-// Maak bijvoorbeeld een scale animatie als je op de Frontend link klikt
-
-// Stap 1: querySelector
+// Stap 1
 let scaleLink = document.querySelector('a[href="#frontend"]')
 
-// Stap 2: addEventListener
+// Stap 2
 scaleLink.addEventListener('click', scaleHandler)
 
-// Stap 3: (Callback functie met) classList (.toggle(), .add(), etc.)
+// Stap 3
 function scaleHandler() {
   scaleLink.classList.add('scale')
 }
 
-// Extra: class verwijderen na animatie zodat hij opnieuw kan afspelen
+// Extra: class verwijderen
 scaleLink.addEventListener('animationend', function() {
   scaleLink.classList.remove('scale')
 })
 
 
-// Stap 1: querySelector
+
+/* AND - Translate animatie */
+
+// Stap 1
 let translateLink = document.querySelector('a[href="#and"]')
 
-// Stap 2: addEventListener
+// Stap 2
 translateLink.addEventListener('click', translateHandler)
 
-// Stap 3: callback functie
+// Stap 3
 function translateHandler() {
   translateLink.classList.add('translateLR')
 }
 
-// Extra: class verwijderen na animatie
+// Extra
 translateLink.addEventListener('animationend', function() {
   translateLink.classList.remove('translateLR')
+})
+
+
+
+/* DEVELOPMENT - Shakedown animatie (DOUBLE CLICK!) */
+
+// Stap 1
+let developmentLink = document.querySelector('a[href="#development"]')
+
+// Stap 2
+developmentLink.addEventListener("dblclick", devHandler)
+
+// Stap 3
+function devHandler() {
+  developmentLink.classList.add("shakedown")
+}
+
+// Extra: class verwijderen
+developmentLink.addEventListener("animationend", function() {
+  developmentLink.classList.remove("shakedown")
 })
