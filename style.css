@@ -17,33 +17,40 @@ body {
   font-size: 1rem;
   background: var(--secondary);
 }
+
 h1, h2, p, a {
-  color: var(--primary)
+  color: var(--primary);
 }
+
+ul {
+  padding: 0;
+}
+
 li {
+  list-style: none;
   font-size: 2em;
   display: inline-block;
-  a {
-    display: inline-block;
-    margin: 0.2em;
-    padding: 0.4em 0.8em;
-    background: var(--secondary);
-    color: var(--highlight-primary);
-    border: var(--line) solid var(--highlight-primary);
-    border-radius: var(--pill);
-    font-weight: normal;
-    text-decoration: none;
-    &:hover, &:focus {
-      color: var(--primary);
-      border-color: var(--primary);
-    }
-  }
 }
 
+li a {
+  display: inline-block;
+  margin: 0.2em;
+  padding: 0.4em 0.8em;
+  background: var(--secondary);
+  color: var(--highlight-primary);
+  border: var(--line) solid var(--highlight-primary);
+  border-radius: var(--pill);
+  font-weight: normal;
+  text-decoration: none;
+}
 
-/* UI Event Classes */
+li a:hover,
+li a:focus {
+  color: var(--primary);
+  border-color: var(--primary);
+}
 
-/* Jump animation on the Design link */
+/* Jump animation link (Design) */
 a[href="#design"] {
   position: relative;
   background: var(--highlight-secondary);
@@ -82,5 +89,22 @@ a[href="#design"] {
   }
 }
 
+/* Scale animation (Frontend) */
+.scale {
+  animation-name: scaleUp;
+  animation-duration: 0.6s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+}
 
-/* Hieronder komen jouw animaties en stijlen */
+@keyframes scaleUp {
+0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
