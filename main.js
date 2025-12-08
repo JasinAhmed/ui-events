@@ -41,3 +41,20 @@ function scaleHandler() {
 scaleLink.addEventListener('animationend', function() {
   scaleLink.classList.remove('scale')
 })
+
+
+// Stap 1: querySelector
+let translateLink = document.querySelector('a[href="#and"]')
+
+// Stap 2: addEventListener
+translateLink.addEventListener('click', translateHandler)
+
+// Stap 3: callback functie
+function translateHandler() {
+  translateLink.classList.add('translateLR')
+}
+
+// Extra: class verwijderen na animatie
+translateLink.addEventListener('animationend', function() {
+  translateLink.classList.remove('translateLR')
+})
