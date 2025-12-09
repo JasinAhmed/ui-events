@@ -28,40 +28,40 @@ designLink.addEventListener('animationend', jumpHandler)
 
 
 
-// 1 knop frontend 
+/* 1 knop Frontend */
+
 // Stap 1: querySelector
-// let scaleLink = document.querySelector...
 let frontendLink = document.querySelector('a[href="#frontend"]')
-// console.log('a[href="#frontend"]')
 
 // Stap 2: addEventListener
-// scaleLink.addEventListener...
 frontendLink.addEventListener("click", scaleHandler)
 
-// Stap 3: (Callback functie met) classList (.toggle(), .add(), etc.)
-// scaleLink.classList.toggle...
+// Stap 3: classList (.toggle(), .add(), etc.)
 function scaleHandler() {
   frontendLink.classList.toggle("scale")
 }
 
+// Extra: class verwijderen aan einde van animatie
 frontendLink.addEventListener("animationend", scaleHandler)
 
 
 
 
 
-// 3 knop & 
+/* 3 knop & */
+
 // Stap 1: querySelector
 let andLink = document.querySelector('a[href="#and"]')
 
 // Stap 2: addEventListener
 andLink.addEventListener("click", translateHandler)
 
-// Stap 3: (Callback functie met) classList (.toggle(), .add(), etc.)
+// Stap 3: classList (.toggle(), .add(), etc.)
 function translateHandler() {
   andLink.classList.add("translateLR")
 }
 
+// Extra: class verwijderen aan einde van animatie
 andLink.addEventListener("animationend", function () {
   andLink.classList.remove("translateLR")
 })
@@ -70,18 +70,20 @@ andLink.addEventListener("animationend", function () {
 
 
 
-// 4 knop development
+/* 4 knop Development */
+
 // Stap 1: querySelector
 let developmentLink = document.querySelector('a[href="#development"]')
 
 // Stap 2: addEventListener
 developmentLink.addEventListener("dblclick", shakeHandler)
 
-// Stap 3: (Callback functie met) classList (.toggle(), .add(), etc.)
+// Stap 3: classList (.toggle(), .add(), etc.)
 function shakeHandler() {
   developmentLink.classList.add("shakedown")
 }
 
+// Extra: class verwijderen aan einde van animatie
 developmentLink.addEventListener("animationend", function () {
   developmentLink.classList.remove("shakedown")
 })
@@ -90,18 +92,20 @@ developmentLink.addEventListener("animationend", function () {
 
 
 
-// 5 knop sprint-5
+/* 5 knop Sprint-5 */
+
 // Stap 1: querySelector
 let sprint5Link = document.querySelector('a[href="#sprint-5"]')
 
 // Stap 2: addEventListener
 sprint5Link.addEventListener("focus", sprint5Handler)
 
-// Stap 3: (Callback functie met) classList (.toggle(), .add(), etc.)
+// Stap 3: classList (.toggle(), .add(), etc.)
 function sprint5Handler() {
   sprint5Link.classList.add("kleurSprint5")
 }
 
+// Extra: class verwijderen aan einde van animatie
 sprint5Link.addEventListener("animationend", function () {
   sprint5Link.classList.remove("kleurSprint5")
 })
@@ -110,7 +114,8 @@ sprint5Link.addEventListener("animationend", function () {
 
 
 
-// 6 knop Fix
+/* 6 knop Fix */
+
 // Stap 1: querySelector
 let fixLink = document.querySelector('a[href="#fix"]')
 
@@ -118,7 +123,7 @@ let fixLink = document.querySelector('a[href="#fix"]')
 fixLink.addEventListener("mouseenter", fixEnterHandler)
 fixLink.addEventListener("mouseleave", fixLeaveHandler)
 
-// Stap 3: (Callback functie met) classList (.toggle(), .add(), etc.)
+// Stap 3: classList (.toggle(), .add(), etc.)
 function fixEnterHandler() {
   fixLink.innerText = "Bar le Duc"
 }
@@ -131,21 +136,22 @@ function fixLeaveHandler() {
 
 
 
-// 7 knop The
+/* 7 knop The */
+
 // Stap 1: querySelector
 let theLink = document.querySelector('a[href="#the"]')
 
 // Stap 2: addEventListener (niet nodig, animatie gaat via :hover)
 
-// Stap 3: (Callback functie met) classList (.toggle(), .add(), etc.)
+// Stap 3: classList (.toggle(), .add(), etc.)
 theLink.classList.add("flipHover")
 
-// Extra fix zodat hij niet dubbel flipt (laat deze maar, geen comment nodig)
+// Extra: class toevoegen bij mouseenter
 theLink.addEventListener("mouseenter", function () {
-  if (theLink.classList.contains("isFlipping")) return
   theLink.classList.add("isFlipping")
 })
 
+// Extra: class verwijderen aan einde van animatie
 theLink.addEventListener("animationend", function () {
   theLink.classList.remove("isFlipping")
 })
@@ -154,7 +160,8 @@ theLink.addEventListener("animationend", function () {
 
 
 
-// 8 knop Flow
+/* 8 knop Flow */
+
 // Stap 1: querySelector
 let flowLink = document.querySelector('a[href="#flow"]')
 
@@ -163,7 +170,7 @@ flowLink.addEventListener("mousedown", flowDownHandler)
 flowLink.addEventListener("mouseup", flowUpHandler)
 flowLink.addEventListener("mouseleave", flowUpHandler)
 
-// Stap 3: (Callback functie met) classList (.toggle(), .add(), etc.)
+// Stap 3: classList (.toggle(), .add(), etc.)
 function flowDownHandler() {
   flowLink.classList.remove("flipTerug")
   flowLink.classList.add("flip")
@@ -174,12 +181,17 @@ function flowUpHandler() {
   flowLink.classList.add("flipTerug")
 }
 
-// Extra: class weer verwijderen aan einde
+// Extra: class verwijderen aan einde van animatie
 flowLink.addEventListener("animationend", function () {
   flowLink.classList.remove("flipTerug")
 })
 
-// 9 knop User
+
+
+
+
+/* 9 knop User */
+
 // Stap 1: querySelector
 let userLink = document.querySelector('a[href="#user"]')
 
@@ -189,14 +201,19 @@ document.addEventListener("keyup", function (event) {
   // altijd eerst oude kleuren weghalen
   userLink.classList.remove("user-a", "user-b", "user-c")
 
-  // letter naar lowercase MDN bron 
+  // letter naar lowercase (MDN bron)
   let letter = event.key.toLowerCase()
 
   // Stap 3: classList -> "user-" + letter
   userLink.classList.add("user-" + letter)
 })
 
-// 10 knop Interface
+
+
+
+
+/* 10 knop Interface */
+
 // Stap 1: querySelector
 let interfaceLink = document.querySelector('a[href="#interface"]')
 
@@ -214,6 +231,3 @@ function interfaceUpHandler() {
   interfaceLink.classList.remove("ballonOp")
   interfaceLink.classList.add("ballonLeeg")
 }
-
-
-
