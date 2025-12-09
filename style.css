@@ -307,3 +307,45 @@ a[href="#design"] {
 .user-c {
   color:red;
 }
+
+#interface {
+    transition: transform 10s ease-out;
+}
+
+/* 10 Interface ballon animatie */
+
+.ballonOp {
+  animation-name: ballonOp;
+  animation-duration: 0.2s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.ballonLeeg {
+  animation-name: ballonLeeg;
+  animation-duration: 0.2s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes ballonOp {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.5);
+  }
+}
+
+@keyframes ballonLeeg {
+  0% {
+    transform: scale(1.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

@@ -195,3 +195,22 @@ document.addEventListener("keyup", function (event) {
   // Stap 3: classList -> "user-" + letter
   userLink.classList.add("user-" + letter)
 })
+
+// 10 knop Interface
+// Stap 1: querySelector
+let interfaceLink = document.querySelector('a[href="#interface"]')
+
+// Stap 2: addEventListener
+document.addEventListener("keydown", interfaceDownHandler)
+document.addEventListener("keyup", interfaceUpHandler)
+
+// Stap 3: classList (.add(), .remove())
+function interfaceDownHandler() {
+  interfaceLink.classList.remove("ballonLeeg")
+  interfaceLink.classList.add("ballonOp")
+}
+
+function interfaceUpHandler() {
+  interfaceLink.classList.remove("ballonOp")
+  interfaceLink.classList.add("ballonLeeg")
+}
