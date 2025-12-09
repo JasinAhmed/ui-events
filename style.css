@@ -196,7 +196,7 @@ a[href="#design"] {
 .kleurSprint5 {
   animation-name: kleurSprint5Animatie;
   animation-duration: 3s;
-  animation-timing-function: ease-out;
+  animation-timing-function: linear;
   animation-iteration-count: 1;
 }
 
@@ -208,22 +208,22 @@ a[href="#design"] {
 
   25% {
     background-color: var(--highlight-primary);
-    color: var(--secondary);
+    
   }
 
   50% {
     background-color: var(--highlight-secondary);
-    color: var(--secondary);
+    
   }
 
   75% {
     background-color: var(--primary);
-    color: var(--secondary);
+   
   }
 
   100% {
     background-color: var(--secondary);
-    color: var(--highlight-primary);
+  
   }
 }
 
@@ -349,3 +349,4 @@ a[href="#design"] {
     transform: scale(1);
   }
 }
+

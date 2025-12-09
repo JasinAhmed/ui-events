@@ -95,7 +95,7 @@ developmentLink.addEventListener("animationend", function () {
 let sprint5Link = document.querySelector('a[href="#sprint-5"]')
 
 // Stap 2: addEventListener
-sprint5Link.addEventListener("click", sprint5Handler)
+sprint5Link.addEventListener("focus", sprint5Handler)
 
 // Stap 3: (Callback functie met) classList (.toggle(), .add(), etc.)
 function sprint5Handler() {
@@ -189,7 +189,7 @@ document.addEventListener("keyup", function (event) {
   // altijd eerst oude kleuren weghalen
   userLink.classList.remove("user-a", "user-b", "user-c")
 
-  // letter naar lowercase
+  // letter naar lowercase MDN bron 
   let letter = event.key.toLowerCase()
 
   // Stap 3: classList -> "user-" + letter
@@ -214,3 +214,6 @@ function interfaceUpHandler() {
   interfaceLink.classList.remove("ballonOp")
   interfaceLink.classList.add("ballonLeeg")
 }
+
+
+
