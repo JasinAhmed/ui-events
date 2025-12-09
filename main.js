@@ -74,3 +74,23 @@ function devHandler() {
 developmentLink.addEventListener("animationend", function() {
   developmentLink.classList.remove("shakedown")
 })
+
+
+
+/* SPRINT 5 - Kleuren animatie */
+
+// Stap 1
+let sprint5Link = document.querySelector('a[href="#sprint-5"]')
+
+// Stap 2
+sprint5Link.addEventListener('click', sprint5Handler)
+
+// Stap 3
+function sprint5Handler() {
+  sprint5Link.classList.add('kleurSprint5')
+}
+
+// Extra: class verwijderen om opnieuw te kunnen klikken
+sprint5Link.addEventListener('animationend', function() {
+  sprint5Link.classList.remove('kleurSprint5')
+})

@@ -148,16 +148,47 @@ a[href="#design"] {
   20% {
     transform: rotate(-10deg) scale(1.05);
   }
-  40% {
+  50% {
     transform: rotate(10deg) scale(1.05);
   }
   60% {
-    transform: rotate(-6deg) scale(1.1);
+    transform: rotate(-7deg) scale(1.1);
   }
   80% {
     transform: rotate(6deg) scale(1.05);
   }
   100% {
     transform: rotate(0deg) scale(1);
+  }
+}
+
+/* kleuren animatie sprint 5 */
+.kleurSprint5 {
+  animation-name: kleurSprint5Animatie;
+  animation-duration: 3s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+}
+
+@keyframes kleurSprint5Animatie {
+  0% {
+    background-color: var(--secondary);
+    color: var(--highlight-primary);
+  }
+  25% {
+    background-color: var(--highlight-primary);
+    color: var(--secondary);
+  }
+  50% {
+    background-color: var(--highlight-secondary);
+    color: var(--secondary);
+  }
+  75% {
+    background-color: var(--primary);
+    color: var(--secondary);
+  }
+  100% {
+    background-color: var(--secondary);
+    color: var(--highlight-primary);
   }
 }
