@@ -101,6 +101,7 @@ a[href="#design"] {
   }
 }
 
+
    /* Scale animation (Frontend) */
 
 
@@ -252,5 +253,43 @@ a[href="#design"] {
 
   100% {
     transform: rotateY(180deg);
+  }
+}
+
+
+   /* 8 FLOW Flip mousedown + mouseup */
+
+
+.flip {
+  animation-name: flowFlip;
+  animation-duration: 0.4s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+}
+
+.flipTerug {
+  animation-name: flowFlipTerug;
+  animation-duration: 0.4s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+}
+
+@keyframes flowFlip {
+  0% {
+    transform: rotateY(0deg);
+  }
+
+  100% {
+    transform: rotateY(180deg);
+  }
+}
+
+@keyframes flowFlipTerug {
+  0% {
+    transform: rotateY(180deg);
+  }
+
+  100% {
+    transform: rotateY(0deg);
   }
 }

@@ -22,6 +22,7 @@ designLink.addEventListener('animationend', jumpHandler)
 
 
 
+
 // Ga zelf verder met de overige elementen, aan de hand van de instructies
 // Maak bijvoorbeeld een scale animatie als je op de Frontend link klikt
 
@@ -47,6 +48,8 @@ frontendLink.addEventListener("animationend", scaleHandler)
 
 
 
+
+
 // 3 knop & 
 // Stap 1: querySelector
 let andLink = document.querySelector('a[href="#and"]')
@@ -56,17 +59,18 @@ andLink.addEventListener("click", translateHandler)
 
 // Stap 3: (Callback functie met) classList (.toggle(), .add(), etc.)
 function translateHandler() {
-  andLink.classList.add("translate")
+  andLink.classList.add("translateLR")
 }
 
 andLink.addEventListener("animationend", function () {
-  andLink.classList.remove("translate")
+  andLink.classList.remove("translateLR")
 })
 
 
 
-// 4 knop development
 
+
+// 4 knop development
 // Stap 1: querySelector
 let developmentLink = document.querySelector('a[href="#development"]')
 
@@ -75,12 +79,14 @@ developmentLink.addEventListener("dblclick", shakeHandler)
 
 // Stap 3: (Callback functie met) classList (.toggle(), .add(), etc.)
 function shakeHandler() {
-  developmentLink.classList.add("shake")
+  developmentLink.classList.add("shakedown")
 }
 
 developmentLink.addEventListener("animationend", function () {
-  developmentLink.classList.remove("shake")
+  developmentLink.classList.remove("shakedown")
 })
+
+
 
 
 
@@ -102,8 +108,9 @@ sprint5Link.addEventListener("animationend", function () {
 
 
 
-// 6 knop Fix
 
+
+// 6 knop Fix
 // Stap 1: querySelector
 let fixLink = document.querySelector('a[href="#fix"]')
 
@@ -122,6 +129,8 @@ function fixLeaveHandler() {
 
 
 
+
+
 // 7 knop The
 // Stap 1: querySelector
 let theLink = document.querySelector('a[href="#the"]')
@@ -131,3 +140,41 @@ let theLink = document.querySelector('a[href="#the"]')
 // Stap 3: (Callback functie met) classList (.toggle(), .add(), etc.)
 theLink.classList.add("flipHover")
 
+// Extra fix zodat hij niet dubbel flipt (laat deze maar, geen comment nodig)
+theLink.addEventListener("mouseenter", function () {
+  if (theLink.classList.contains("isFlipping")) return
+  theLink.classList.add("isFlipping")
+})
+
+theLink.addEventListener("animationend", function () {
+  theLink.classList.remove("isFlipping")
+})
+
+
+
+
+
+// 8 knop Flow
+// Stap 1: querySelector
+let flowLink = document.querySelector('a[href="#flow"]')
+
+// Stap 2: addEventListener
+flowLink.addEventListener("mousedown", flowDownHandler)
+flowLink.addEventListener("mouseup", flowUpHandler)
+flowLink.addEventListener("mouseleave", flowUpHandler)
+
+// Stap 3: (Callback functie met) classList (.toggle(), .add(), etc.)
+function flowDownHandler() {
+  flowLink.classList.remove("flipTerug")
+  flowLink.classList.add("flip")
+}
+
+function flowUpHandler() {
+  flowLink.classList.remove("flip")
+  flowLink.classList.add("flipTerug")
+}
+
+// Extra: class weer verwijderen aan einde
+flowLink.addEventListener("animationend", function () {
+  flowLink.classList.remove("flipTerug")
+})
