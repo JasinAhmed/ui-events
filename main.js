@@ -1,144 +1,133 @@
 /* De eerste interactie is al voor jullie uitgewerkt
    Als je op het 2e linkje klikt (Design), springt deze omhoog */
 
-// Stap 1
+// Stap 1: selecteer het Design linkje, en sla deze op in een variabele
 let designLink = document.querySelector('a[href="#design"]')
 
-// Stap 2
+// Stap 2: voeg de (click) event listener toe aan de link, met een callback functie
+// In dit geval wordt de jumpHandler functie aangeroepen, zodra je op het linkje klikt
 designLink.addEventListener('click', jumpHandler)
 
-// Stap 3
+// Deze jumpHandler functie staat klaar voor als we 'm aanroepen; deze wordt dus
+// _niet_ meteen bij het laden van de pagina aangeroepen
 function jumpHandler() {
+  // Stap 3: toggle een class op het element (zodra er dus op een link wordt geklikt)
   designLink.classList.toggle('jump')
 }
 
-// Extra
+// Extraatje, waardoor de class weer weggehaald wordt zodra de animatie afgelopen is
+// Dit is trouwens geen UIEvent, maar een AnimationEvent
 designLink.addEventListener('animationend', jumpHandler)
 
 
 
-/* FRONTEND - Scale animatie */
 
-// Stap 1
-let scaleLink = document.querySelector('a[href="#frontend"]')
+// Ga zelf verder met de overige elementen, aan de hand van de instructies
+// Maak bijvoorbeeld een scale animatie als je op de Frontend link klikt
 
-// Stap 2
-scaleLink.addEventListener('click', scaleHandler)
 
-// Stap 3
+
+// 1 knop frontend 
+// Stap 1: querySelector
+// let scaleLink = document.querySelector...
+let frontendLink = document.querySelector('a[href="#frontend"]')
+// console.log('a[href="#frontend"]')
+
+// Stap 2: addEventListener
+// scaleLink.addEventListener...
+frontendLink.addEventListener("click", scaleHandler)
+
+// Stap 3: (Callback functie met) classList (.toggle(), .add(), etc.)
+// scaleLink.classList.toggle...
 function scaleHandler() {
-  scaleLink.classList.add('scale')
+  frontendLink.classList.toggle("scale")
 }
 
-// Extra
-scaleLink.addEventListener('animationend', function() {
-  scaleLink.classList.remove('scale')
-})
+frontendLink.addEventListener("animationend", scaleHandler)
 
 
 
-/* AND - Translate animatie */
+// 3 knop & 
+// Stap 1: querySelector
+let andLink = document.querySelector('a[href="#and"]')
 
-// Stap 1
-let translateLink = document.querySelector('a[href="#and"]')
+// Stap 2: addEventListener
+andLink.addEventListener("click", translateHandler)
 
-// Stap 2
-translateLink.addEventListener('click', translateHandler)
-
-// Stap 3
+// Stap 3: (Callback functie met) classList (.toggle(), .add(), etc.)
 function translateHandler() {
-  translateLink.classList.add('translateLR')
+  andLink.classList.add("translate")
 }
 
-// Extra
-translateLink.addEventListener('animationend', function() {
-  translateLink.classList.remove('translateLR')
+andLink.addEventListener("animationend", function () {
+  andLink.classList.remove("translate")
 })
 
 
 
-/* DEVELOPMENT - Shakedown animatie (DOUBLE CLICK!) */
+// 4 knop development
 
-// Stap 1
+// Stap 1: querySelector
 let developmentLink = document.querySelector('a[href="#development"]')
 
-// Stap 2
-developmentLink.addEventListener("dblclick", devHandler)
+// Stap 2: addEventListener
+developmentLink.addEventListener("dblclick", shakeHandler)
 
-// Stap 3
-function devHandler() {
-  developmentLink.classList.add("shakedown")
+// Stap 3: (Callback functie met) classList (.toggle(), .add(), etc.)
+function shakeHandler() {
+  developmentLink.classList.add("shake")
 }
 
-// Extra
-developmentLink.addEventListener("animationend", function() {
-  developmentLink.classList.remove("shakedown")
+developmentLink.addEventListener("animationend", function () {
+  developmentLink.classList.remove("shake")
 })
 
 
 
-/* SPRINT 5 - Kleuren animatie */
-
-// Stap 1
+// 5 knop sprint-5
+// Stap 1: querySelector
 let sprint5Link = document.querySelector('a[href="#sprint-5"]')
 
-// Stap 2
-sprint5Link.addEventListener('click', sprint5Handler)
+// Stap 2: addEventListener
+sprint5Link.addEventListener("click", sprint5Handler)
 
-// Stap 3
+// Stap 3: (Callback functie met) classList (.toggle(), .add(), etc.)
 function sprint5Handler() {
-  sprint5Link.classList.add('kleurSprint5')
+  sprint5Link.classList.add("kleurSprint5")
 }
 
-// Extra
-sprint5Link.addEventListener('animationend', function() {
-  sprint5Link.classList.remove('kleurSprint5')
+sprint5Link.addEventListener("animationend", function () {
+  sprint5Link.classList.remove("kleurSprint5")
 })
 
 
 
-/* FIX → BAR LE DUC */
+// 6 knop Fix
 
-// Stap 1
+// Stap 1: querySelector
 let fixLink = document.querySelector('a[href="#fix"]')
 
-// Stap 2 — hover is CSS, niet JS
+// Stap 2: addEventListener
+fixLink.addEventListener("mouseenter", fixEnterHandler)
+fixLink.addEventListener("mouseleave", fixLeaveHandler)
 
-// Stap 3
-fixLink.classList.add("barLeDucHover")
-
-fixLink.addEventListener("mouseenter", function() {
+// Stap 3: (Callback functie met) classList (.toggle(), .add(), etc.)
+function fixEnterHandler() {
   fixLink.innerText = "Bar le Duc"
-})
+}
 
-fixLink.addEventListener("mouseleave", function() {
+function fixLeaveHandler() {
   fixLink.innerText = "Fix"
-})
-
-
-
-/* FLOW  FLIP ANIMATIE  */
-
-// Stap 1
-let flowLink = document.querySelector('a[href="#the"]')
-
-// Stap 2
-flowLink.addEventListener("mousedown", flipDown)
-flowLink.addEventListener("mouseup", flipUp)
-
-// Stap 3
-function flipDown() {
-  flowLink.classList.remove("flipTerug")
-  flowLink.classList.add("flip")
 }
 
-function flipUp() {
-  flowLink.classList.remove("flip")
-  flowLink.classList.add("flipTerug")
-}
 
-// Extra
-flowLink.addEventListener("animationend", function() {
-  flowLink.classList.remove("flip")
-  flowLink.classList.remove("flipTerug")
-})
+
+// 7 knop The
+// Stap 1: querySelector
+let theLink = document.querySelector('a[href="#the"]')
+
+// Stap 2: addEventListener (niet nodig, animatie gaat via :hover)
+
+// Stap 3: (Callback functie met) classList (.toggle(), .add(), etc.)
+theLink.classList.add("flipHover")
+
