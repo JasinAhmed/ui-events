@@ -1,18 +1,18 @@
 /* De eerste interactie is al voor jullie uitgewerkt
    Als je op het 2e linkje klikt (Design), springt deze omhoog */
 
-// Stap 1: selecteer het Design linkje
+// Stap 1
 let designLink = document.querySelector('a[href="#design"]')
 
-// Stap 2: voeg de click-event toe
+// Stap 2
 designLink.addEventListener('click', jumpHandler)
 
-// Callback functie
+// Stap 3
 function jumpHandler() {
   designLink.classList.toggle('jump')
 }
 
-// Extra: class verwijderen na animatie zodat hij opnieuw werkt
+// Extra
 designLink.addEventListener('animationend', jumpHandler)
 
 
@@ -30,7 +30,7 @@ function scaleHandler() {
   scaleLink.classList.add('scale')
 }
 
-// Extra: class verwijderen
+// Extra
 scaleLink.addEventListener('animationend', function() {
   scaleLink.classList.remove('scale')
 })
@@ -70,7 +70,7 @@ function devHandler() {
   developmentLink.classList.add("shakedown")
 }
 
-// Extra: class verwijderen
+// Extra
 developmentLink.addEventListener("animationend", function() {
   developmentLink.classList.remove("shakedown")
 })
@@ -90,7 +90,29 @@ function sprint5Handler() {
   sprint5Link.classList.add('kleurSprint5')
 }
 
-// Extra: class verwijderen om opnieuw te kunnen klikken
+// Extra
 sprint5Link.addEventListener('animationend', function() {
   sprint5Link.classList.remove('kleurSprint5')
+})
+
+
+
+/* FIX → BAR LE DUC */
+
+// Stap 1
+let fixLink = document.querySelector('a[href="#fix"]')
+
+// Stap 2 — hover is CSS, niet JS
+
+// Stap 3
+fixLink.classList.add("barLeDucHover")
+
+// Hover → verander tekst
+fixLink.addEventListener("mouseenter", function() {
+  fixLink.innerText = "Bar le Duc"
+})
+
+// Mouse weg → terug naar Fix
+fixLink.addEventListener("mouseleave", function() {
+  fixLink.innerText = "Fix"
 })
