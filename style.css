@@ -293,3 +293,17 @@ a[href="#design"] {
     transform: rotateY(0deg);
   }
 }
+
+/* 9 USER keyup kleuren */
+
+.user-a {
+  color: var(--highlight-primary);
+}
+
+.user-b {
+  color: var(--highlight-secondary);
+}
+
+.user-c {
+  color:red;
+}

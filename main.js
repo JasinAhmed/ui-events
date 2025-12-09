@@ -178,3 +178,20 @@ function flowUpHandler() {
 flowLink.addEventListener("animationend", function () {
   flowLink.classList.remove("flipTerug")
 })
+
+// 9 knop User
+// Stap 1: querySelector
+let userLink = document.querySelector('a[href="#user"]')
+
+// Stap 2: addEventListener
+document.addEventListener("keyup", function (event) {
+
+  // altijd eerst oude kleuren weghalen
+  userLink.classList.remove("user-a", "user-b", "user-c")
+
+  // letter naar lowercase
+  let letter = event.key.toLowerCase()
+
+  // Stap 3: classList -> "user-" + letter
+  userLink.classList.add("user-" + letter)
+})
