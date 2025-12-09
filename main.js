@@ -107,12 +107,38 @@ let fixLink = document.querySelector('a[href="#fix"]')
 // Stap 3
 fixLink.classList.add("barLeDucHover")
 
-// Hover → verander tekst
 fixLink.addEventListener("mouseenter", function() {
   fixLink.innerText = "Bar le Duc"
 })
 
-// Mouse weg → terug naar Fix
 fixLink.addEventListener("mouseleave", function() {
   fixLink.innerText = "Fix"
+})
+
+
+
+/* FLOW  FLIP ANIMATIE  */
+
+// Stap 1
+let flowLink = document.querySelector('a[href="#the"]')
+
+// Stap 2
+flowLink.addEventListener("mousedown", flipDown)
+flowLink.addEventListener("mouseup", flipUp)
+
+// Stap 3
+function flipDown() {
+  flowLink.classList.remove("flipTerug")
+  flowLink.classList.add("flip")
+}
+
+function flipUp() {
+  flowLink.classList.remove("flip")
+  flowLink.classList.add("flipTerug")
+}
+
+// Extra
+flowLink.addEventListener("animationend", function() {
+  flowLink.classList.remove("flip")
+  flowLink.classList.remove("flipTerug")
 })

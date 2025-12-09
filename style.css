@@ -193,7 +193,32 @@ a[href="#design"] {
   }
 }
 
-/* FIX → BAR LE DUC (simple version for first years) */
+/* FIX → BAR LE DUC */
 .barLeDucHover {
   transition: color 0.3s ease;
+}
+
+/* FLOW Flip animatie */
+.flip {
+  animation-name: flipAnimatie;
+  animation-duration: 0.4s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+}
+
+.flipTerug {
+  animation-name: flipTerugAnimatie;
+  animation-duration: 0.4s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+}
+
+@keyframes flipAnimatie {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(180deg); }
+}
+
+@keyframes flipTerugAnimatie {
+  0% { transform: rotateY(180deg); }
+  100% { transform: rotateY(0deg); }
 }
