@@ -348,3 +348,14 @@ a[href="#design"] {
   }
 }
 
+/* 11 Gradient volgt muise op de Interaction link */
+.hover {
+  --x: 50px;
+  --y: 50px;
+  background: radial-gradient(
+    circle at var(--x) var(--y),
+    rgb(255, 162, 32) 5%,
+    transparent 40%,
+    transparent 100%
+  );
+}

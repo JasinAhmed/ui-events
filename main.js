@@ -252,3 +252,19 @@ eventsLink.addEventListener("wheel", (event) => {
 
   eventsLink.style.fontSize = fontSize + "px";
 });
+
+
+//Gradient following mouse on the Interaction link
+const interaction = document.querySelector('a[href="#interaction"]');
+
+interaction.addEventListener("mousemove", function (event) {
+  interaction.classList.add("hover");
+  let x = event.offsetX;
+  let y = event.offsetY;
+  interaction.style.setProperty("--x", x + "px");
+  interaction.style.setProperty("--y", y + "px");
+});
+
+interaction.addEventListener("mouseout", function () {
+  interaction.classList.remove("hover");
+});
